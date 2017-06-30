@@ -2,8 +2,9 @@
   <div class="hello">
     <h5>Featured Projects</h5>
     {{projects}}
+    {{works}}
     <ul>
-      <project-item v-for="(index, value) in projects" :project_id="index" :project_data="value" :key="index"></project-item>
+      <project-item v-for="(index, value) in projects" :project_data="index" :project_id="value" :key="index"></project-item>
     </ul>
   </div>
 </template>
@@ -11,12 +12,19 @@
 <script>
 import ProjectItem from '@/components/ProjectItem'
 import projects from '@/data.json'
+
+const works = [
+  {
+    title: 'Work 1'
+  }
+]
 export default {
   name: 'hello',
   data () {
     return {
       // msg: 'Welcome to Your Vue.js App'
-      projects
+      projects,
+      works
     }
   },
   components: {
